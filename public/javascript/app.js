@@ -8,7 +8,7 @@ const messagetwo = document.querySelector('#message-2')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search.value
-    const url = 'http://localhost:3000/weather?address=' + location
+    const url = '/weather?address=' + location
 
     messageOne.textContent = 'Loading...'
     messagetwo.textContent = ''
@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
                 console.log(data.error)
             } else {
                 messageOne.textContent = data.location
-                messagetwo.textContent = data.temperature
+                messagetwo.textContent = 'current temperature is ' + data.temperature
                 // console.log(data.temperature)
                 // console.log(data.location)
             }
